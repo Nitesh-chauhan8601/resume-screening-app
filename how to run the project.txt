@@ -1,0 +1,12 @@
+cd C:\Users\user\Downloads\project
+python -m venv venv
+.\venv\Scripts\python.exe -m pip install --upgrade pip
+.\venv\Scripts\python.exe -m pip install -r backend\requirements.txt
+Copy-Item .env.example .env
+.\venv\Scripts\python.exe run.py
+Then open http://127.0.0.1:5000.
+
+Use these login details for admin:
+
+Email: admin@example.com
+Password: admin123

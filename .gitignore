@@ -1,0 +1,14 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.venv/
+venv/
+instance/
+logs/
+backend/uploads/resumes/*
+backend/uploads/reports/*
+!backend/uploads/resumes/.gitkeep
+!backend/uploads/reports/.gitkeep
+resume_screening.db

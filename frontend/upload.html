@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Resumes | ResumeAI</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <div class="app-shell">
+        <header class="topbar">
+            <div class="brand">ResumeAI</div>
+            <nav>
+                <a class="nav-link" href="/dashboard.html" data-role="recruiter">Dashboard</a>
+                <a class="nav-link" href="/job-form.html" data-role="recruiter">Job Profiles</a>
+                <a class="nav-link" href="/upload.html" data-role="recruiter">Upload Resumes</a>
+                <a class="nav-link" href="/results.html" data-role="recruiter">Results</a>
+                <a class="nav-link" href="/admin.html" data-role="admin">Admin</a>
+            </nav>
+            <div class="topbar-actions">
+                <span id="currentUser" class="user-badge"></span>
+                <button id="logoutButton" class="btn btn-secondary" type="button">Logout</button>
+            </div>
+        </header>
+
+        <section class="hero">
+            <h1>Resume Upload</h1>
+            <p>Upload one resume for direct analysis or upload multiple resumes for AI ranking against a selected job profile.</p>
+        </section>
+
+        <div class="grid grid-2">
+            <section class="panel">
+                <h2>Single Resume Upload</h2>
+                <form id="singleUploadForm">
+                    <div class="field">
+                        <label for="singleResumeFile">Choose PDF or DOCX</label>
+                        <input id="singleResumeFile" type="file" accept=".pdf,.docx" required>
+                    </div>
+                    <div class="actions">
+                        <button class="btn btn-primary" type="submit">Upload Single Resume</button>
+                    </div>
+                </form>
+            </section>
+
+            <section class="panel">
+                <h2>Bulk Resume Upload</h2>
+                <form id="bulkUploadForm">
+                    <div class="field">
+                        <label for="bulkResumeFiles">Choose Multiple Files</label>
+                        <input id="bulkResumeFiles" type="file" accept=".pdf,.docx" multiple required>
+                    </div>
+                    <div class="actions">
+                        <button class="btn btn-accent" type="submit">Upload Multiple Resumes</button>
+                    </div>
+                </form>
+            </section>
+        </div>
+
+        <section class="panel">
+            <h2>Run Screening</h2>
+            <div class="form-grid">
+                <div class="field">
+                    <label for="screeningJobId">Select Job Profile</label>
+                    <select id="screeningJobId"></select>
+                </div>
+                <div class="field">
+                    <label for="screenLatestOnly">Latest Upload Only</label>
+                    <input id="screenLatestOnly" type="checkbox">
+                </div>
+            </div>
+            <div class="actions">
+                <button id="runScreeningButton" class="btn btn-primary" type="button">Run AI Screening</button>
+                <a class="btn btn-secondary" href="/results.html">Open Results Page</a>
+            </div>
+            <div id="screeningMessage" class="message"></div>
+        </section>
+
+        <section class="panel">
+            <h2>Uploaded Resume Library</h2>
+            <div id="uploadMessage" class="message"></div>
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Candidate</th>
+                            <th>File</th>
+                            <th>Skills</th>
+                            <th>Experience</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="resumeTableBody"></tbody>
+                </table>
+            </div>
+        </section>
+    </div>
+
+    <script src="/js/common.js"></script>
+    <script src="/js/upload.js"></script>
+</body>
+</html>

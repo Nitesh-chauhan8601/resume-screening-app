@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Monitoring | ResumeAI</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <div class="app-shell">
+        <header class="topbar">
+            <div class="brand">ResumeAI</div>
+            <nav>
+                <a class="nav-link" href="/dashboard.html" data-role="recruiter">Dashboard</a>
+                <a class="nav-link" href="/job-form.html" data-role="recruiter">Job Profiles</a>
+                <a class="nav-link" href="/upload.html" data-role="recruiter">Upload Resumes</a>
+                <a class="nav-link" href="/results.html" data-role="recruiter">Results</a>
+                <a class="nav-link" href="/admin.html" data-role="admin">Admin</a>
+            </nav>
+            <div class="topbar-actions">
+                <span id="currentUser" class="user-badge"></span>
+                <button id="logoutButton" class="btn btn-secondary" type="button">Logout</button>
+            </div>
+        </header>
+
+        <section class="hero">
+            <h1>Admin Monitoring Console</h1>
+            <p>Track system health, upload errors, issue tickets, and operational activity from one admin-only dashboard.</p>
+        </section>
+
+        <section class="panel">
+            <div class="grid grid-3">
+                <div class="stat-card">
+                    <span class="stat-label">Database</span>
+                    <strong id="healthDatabase" class="stat-value">-</strong>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-label">Upload Folder</span>
+                    <strong id="healthUploads" class="stat-value">-</strong>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-label">Errors Logged</span>
+                    <strong id="healthErrors" class="stat-value">0</strong>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-label">Open Tickets</span>
+                    <strong id="healthTickets" class="stat-value">0</strong>
+                </div>
+            </div>
+        </section>
+
+        <div class="grid grid-2">
+            <section class="panel">
+                <h2>Create Ticket</h2>
+                <form id="ticketForm">
+                    <div class="field">
+                        <label for="ticketTitle">Title</label>
+                        <input id="ticketTitle" type="text" required>
+                    </div>
+                    <div class="field">
+                        <label for="ticketSeverity">Severity</label>
+                        <select id="ticketSeverity">
+                            <option value="low">Low</option>
+                            <option value="medium" selected>Medium</option>
+                            <option value="high">High</option>
+                        </select>
+                    </div>
+                    <div class="field">
+                        <label for="ticketDescription">Description</label>
+                        <textarea id="ticketDescription" required></textarea>
+                    </div>
+                    <div class="actions">
+                        <button class="btn btn-primary" type="submit">Create Ticket</button>
+                    </div>
+                </form>
+                <div id="adminMessage" class="message"></div>
+            </section>
+
+            <section class="panel">
+                <h2>Recent Logs</h2>
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Level</th>
+                                <th>Module</th>
+                                <th>Message</th>
+                                <th>Time</th>
+                            </tr>
+                        </thead>
+                        <tbody id="logsTableBody"></tbody>
+                    </table>
+                </div>
+            </section>
+        </div>
+
+        <section class="panel">
+            <h2>Issue Tickets</h2>
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>Severity</th>
+                            <th>Status</th>
+                            <th>Description</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="ticketsTableBody"></tbody>
+                </table>
+            </div>
+        </section>
+    </div>
+
+    <script src="/js/common.js"></script>
+    <script src="/js/admin.js"></script>
+</body>
+</html>

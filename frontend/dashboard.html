@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recruiter Dashboard | ResumeAI</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <div class="app-shell">
+        <header class="topbar">
+            <div class="brand">ResumeAI</div>
+            <nav>
+                <a class="nav-link" href="/dashboard.html" data-role="recruiter">Dashboard</a>
+                <a class="nav-link" href="/job-form.html" data-role="recruiter">Job Profiles</a>
+                <a class="nav-link" href="/upload.html" data-role="recruiter">Upload Resumes</a>
+                <a class="nav-link" href="/results.html" data-role="recruiter">Results</a>
+                <a class="nav-link" href="/admin.html" data-role="admin">Admin</a>
+            </nav>
+            <div class="topbar-actions">
+                <span id="currentUser" class="user-badge"></span>
+                <button id="logoutButton" class="btn btn-secondary" type="button">Logout</button>
+            </div>
+        </header>
+
+        <section class="hero">
+            <h1>Recruiter Dashboard</h1>
+            <p>Create job profiles, upload resumes, run AI screening, and review top candidates from one workflow.</p>
+        </section>
+
+        <section class="panel">
+            <div class="grid grid-3">
+                <div class="stat-card">
+                    <span class="stat-label">Total Jobs</span>
+                    <strong id="totalJobs" class="stat-value">0</strong>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-label">Uploaded Resumes</span>
+                    <strong id="totalResumes" class="stat-value">0</strong>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-label">Screened Candidates</span>
+                    <strong id="screenedCandidates" class="stat-value">0</strong>
+                </div>
+            </div>
+            <div class="actions">
+                <a class="btn btn-primary" href="/job-form.html">Create Job Profile</a>
+                <a class="btn btn-accent" href="/upload.html">Upload Resumes</a>
+                <a class="btn btn-secondary" href="/results.html">View Results</a>
+            </div>
+        </section>
+
+        <section class="panel">
+            <h2>Recent Job Profiles</h2>
+            <div id="recentJobs"></div>
+        </section>
+
+        <section class="panel">
+            <h2>Resume Snapshot</h2>
+            <div id="resumeSnapshot"></div>
+        </section>
+    </div>
+
+    <script src="/js/common.js"></script>
+    <script src="/js/dashboard.js"></script>
+</body>
+</html>

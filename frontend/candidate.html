@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Candidate Analysis | ResumeAI</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <div class="app-shell">
+        <header class="topbar">
+            <div class="brand">ResumeAI</div>
+            <nav>
+                <a class="nav-link" href="/dashboard.html" data-role="recruiter">Dashboard</a>
+                <a class="nav-link" href="/job-form.html" data-role="recruiter">Job Profiles</a>
+                <a class="nav-link" href="/upload.html" data-role="recruiter">Upload Resumes</a>
+                <a class="nav-link" href="/results.html" data-role="recruiter">Results</a>
+                <a class="nav-link" href="/admin.html" data-role="admin">Admin</a>
+            </nav>
+            <div class="topbar-actions">
+                <span id="currentUser" class="user-badge"></span>
+                <button id="logoutButton" class="btn btn-secondary" type="button">Logout</button>
+            </div>
+        </header>
+
+        <section class="hero">
+            <h1 id="candidateTitle">Candidate Analysis</h1>
+            <p id="candidateSubtitle">Loading detailed AI analysis...</p>
+        </section>
+
+        <div id="candidateMessage" class="message"></div>
+
+        <section class="panel">
+            <div class="grid grid-3">
+                <div class="stat-card">
+                    <span class="stat-label">Overall Score</span>
+                    <strong id="scoreOverall" class="stat-value">0</strong>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-label">Skill Score</span>
+                    <strong id="scoreSkills" class="stat-value">0</strong>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-label">Experience Score</span>
+                    <strong id="scoreExperience" class="stat-value">0</strong>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-label">Education Score</span>
+                    <strong id="scoreEducation" class="stat-value">0</strong>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-label">Similarity Score</span>
+                    <strong id="scoreSimilarity" class="stat-value">0</strong>
+                </div>
+            </div>
+        </section>
+
+        <section class="panel">
+            <div class="detail-list">
+                <div class="detail-item">
+                    <strong>Education</strong>
+                    <div id="candidateEducation"></div>
+                </div>
+                <div class="detail-item">
+                    <strong>Experience</strong>
+                    <div id="candidateExperience"></div>
+                </div>
+                <div class="detail-item">
+                    <strong>Recommendation</strong>
+                    <div id="candidateRecommendation"></div>
+                </div>
+            </div>
+            <div class="panel" style="margin-top: 18px;">
+                <h3>AI Notes</h3>
+                <p id="candidateNotes"></p>
+            </div>
+        </section>
+
+        <section class="panel">
+            <h2>Matched Skills</h2>
+            <div id="matchedSkills" class="skill-group"></div>
+        </section>
+
+        <section class="panel">
+            <h2>Missing Skills</h2>
+            <div id="missingSkills" class="skill-group"></div>
+        </section>
+    </div>
+
+    <script src="/js/common.js"></script>
+    <script src="/js/candidate.js"></script>
+</body>
+</html>

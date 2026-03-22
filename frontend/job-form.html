@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Profiles | ResumeAI</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <div class="app-shell">
+        <header class="topbar">
+            <div class="brand">ResumeAI</div>
+            <nav>
+                <a class="nav-link" href="/dashboard.html" data-role="recruiter">Dashboard</a>
+                <a class="nav-link" href="/job-form.html" data-role="recruiter">Job Profiles</a>
+                <a class="nav-link" href="/upload.html" data-role="recruiter">Upload Resumes</a>
+                <a class="nav-link" href="/results.html" data-role="recruiter">Results</a>
+                <a class="nav-link" href="/admin.html" data-role="admin">Admin</a>
+            </nav>
+            <div class="topbar-actions">
+                <span id="currentUser" class="user-badge"></span>
+                <button id="logoutButton" class="btn btn-secondary" type="button">Logout</button>
+            </div>
+        </header>
+
+        <section class="hero">
+            <h1>Job Profiles</h1>
+            <p>Create practical job requirements that the AI engine can match against candidate resumes.</p>
+        </section>
+
+        <section class="panel">
+            <h2 id="formHeading">Create Job Profile</h2>
+            <form id="jobForm">
+                <div class="form-grid">
+                    <div class="field">
+                        <label for="jobTitle">Job Title</label>
+                        <input id="jobTitle" type="text" required>
+                    </div>
+                    <div class="field">
+                        <label for="jobExperience">Minimum Experience (years)</label>
+                        <input id="jobExperience" type="number" min="0" value="0">
+                    </div>
+                    <div class="field">
+                        <label for="jobSkills">Required Skills</label>
+                        <input id="jobSkills" type="text" placeholder="Python, Flask, MySQL">
+                    </div>
+                    <div class="field">
+                        <label for="jobKeywords">Keywords</label>
+                        <input id="jobKeywords" type="text" placeholder="backend, api, database">
+                    </div>
+                    <div class="field">
+                        <label for="jobQualifications">Qualifications</label>
+                        <input id="jobQualifications" type="text" placeholder="BCA, BTech, BSc CS">
+                    </div>
+                </div>
+                <div class="field" style="margin-top: 16px;">
+                    <label for="jobDescription">Job Description</label>
+                    <textarea id="jobDescription" required></textarea>
+                </div>
+                <div class="actions">
+                    <button class="btn btn-primary" type="submit">Save Job Profile</button>
+                    <button class="btn btn-secondary" type="button" id="jobResetButton">Reset</button>
+                </div>
+            </form>
+            <div id="jobsMessage" class="message"></div>
+        </section>
+
+        <section class="panel">
+            <h2>Existing Job Profiles</h2>
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Job Title</th>
+                            <th>Required Skills</th>
+                            <th>Experience</th>
+                            <th>Qualification</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="jobsTableBody"></tbody>
+                </table>
+            </div>
+        </section>
+    </div>
+
+    <script src="/js/common.js"></script>
+    <script src="/js/jobs.js"></script>
+</body>
+</html>

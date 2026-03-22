@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | ResumeAI</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <div class="auth-shell">
+        <section class="hero">
+            <h1>AI-Based Resume Screening System</h1>
+            <p>Recruiters can create job profiles, upload resumes, and shortlist candidates. Admins can monitor logs, tickets, and system health from one place.</p>
+        </section>
+
+        <div class="auth-grid" style="margin-top: 22px;">
+            <section class="auth-card">
+                <h2>Login</h2>
+                <p>Use recruiter credentials or the default admin account.</p>
+                <form id="loginForm">
+                    <div class="field">
+                        <label for="loginEmail">Email</label>
+                        <input id="loginEmail" type="email" required>
+                    </div>
+                    <div class="field">
+                        <label for="loginPassword">Password</label>
+                        <input id="loginPassword" type="password" required>
+                    </div>
+                    <div class="actions">
+                        <button class="btn btn-primary" type="submit">Login</button>
+                    </div>
+                </form>
+                <div id="authMessage" class="message"></div>
+                <div class="panel" style="margin-top: 18px;">
+                    <h3>Default Admin</h3>
+                    <p>Email: <strong>admin@example.com</strong></p>
+                    <p>Password: <strong>admin123</strong></p>
+                </div>
+            </section>
+
+            <section class="auth-card">
+                <h2>Recruiter Registration</h2>
+                <p>Create a recruiter account for testing or final project demo.</p>
+                <form id="registerForm">
+                    <div class="field">
+                        <label for="registerName">Full Name</label>
+                        <input id="registerName" type="text" required>
+                    </div>
+                    <div class="field">
+                        <label for="registerEmail">Email</label>
+                        <input id="registerEmail" type="email" required>
+                    </div>
+                    <div class="field">
+                        <label for="registerPassword">Password</label>
+                        <input id="registerPassword" type="password" minlength="6" required>
+                    </div>
+                    <div class="actions">
+                        <button class="btn btn-accent" type="submit">Create Recruiter Account</button>
+                    </div>
+                </form>
+                <div id="registerMessage" class="message"></div>
+            </section>
+        </div>
+    </div>
+    <script src="/js/common.js"></script>
+    <script src="/js/auth.js"></script>
+</body>
+</html>
